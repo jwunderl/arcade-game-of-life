@@ -71,14 +71,14 @@ function countNeighbors(src: boolean[][], x: number, y: number): number {
     const rY = y + 1; // right y
 
     let count = 0;
-    if (src[lX][lY])++count;
-    if (src[lX][y])++count;
-    if (src[lX][rY])++count;
-    if (src[x][lY])++count;
-    if (src[x][rY])++count;
-    if (src[rX][lY])++count;
-    if (src[rX][y])++count;
-    if (src[rX][rY])++count;
+    if (src[lX][lY]) ++count;
+    if (src[lX][y]) ++count;
+    if (src[lX][rY]) ++count;
+    if (src[x][lY]) ++count;
+    if (src[x][rY]) ++count;
+    if (src[rX][lY]) ++count;
+    if (src[rX][y]) ++count;
+    if (src[rX][rY]) ++count;
     return count;
 }
 
@@ -378,10 +378,12 @@ namespace cells {
         src.drawImage(display, x, y);
     }
 
-    export function createOddCell(toDisplay: OddCell,
+    export function createOddCell(
+        toDisplay: OddCell,
         x: number,
         y: number,
-        src?: Image) {
+        src?: Image
+    ) {
         if (!src) src = scene.backgroundImage();
 
         let display: Image;
